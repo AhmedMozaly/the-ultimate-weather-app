@@ -1,0 +1,4 @@
+.clipped {
+  @apply bg-clay-900 relative z-10 h-4/6 text-white pt-20 px-8 pb-4;
+  clip-path: ellipse(99% 77% at 25% 78%);
+}

@@ -1,6 +1,13 @@
 import { SunIcon } from "../";
+import { timestampToTime } from "../../utils";
 
-const DayMap = () => {
+interface Props {
+  data: { sunrise: number; sunset: number };
+}
+
+const DayMap = ({ data }: Props) => {
+  const { sunrise, sunset } = data;
+
   return (
     <div className="mt-20 max-w-md mx-auto">
       <div className="flex justify-center relative">
@@ -26,7 +33,7 @@ const DayMap = () => {
         </svg>
         <div className="h-14 self-center relative">
           <div className="absolute -top-10 -left-8 w-20 text-center">
-            6:50 AM
+            {timestampToTime(sunrise)}
           </div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +64,7 @@ const DayMap = () => {
         </div>
         <div className="h-14 self-center relative">
           <div className="absolute -top-10 -left-12 w-20 text-center">
-            8:30 PM
+            {timestampToTime(sunset)}
           </div>
           <svg
             xmlns="http://www.w3.org/2000/svg"

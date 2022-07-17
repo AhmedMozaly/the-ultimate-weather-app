@@ -1,7 +1,18 @@
 import { Helmet } from "react-helmet";
-import { GeoSearch, WeatherBox } from "../components";
+
+import { GeoSearch, WeatherBox, Option } from "../components";
+import { useDefaultCity } from "../hooks";
 
 function App() {
+  const [city, updateCity] = useDefaultCity();
+
+  // TODO: useWeatherData hook to fetch weather information when city changes
+  // TODO: useBackgroundImage hook to fetch background image when city changes
+
+  const handleSelect = (city: Option) => {
+    updateCity(city);
+  };
+
   return (
     <>
       <Helmet>
@@ -26,10 +37,10 @@ function App() {
             // TODO: change the image on search
             style={{ backgroundImage: "url(/weather-placeholder.jpg)" }}
           >
-            {/* TODO: onSelect that returns the selection */}
-            <GeoSearch />
+            <GeoSearch onSelect={handleSelect} defaultCity={city} />
             {/* TODO: pass response from weatheropen api to format it inside */}
-            <WeatherBox />
+            {/* @ts-ignore */}
+            <WeatherBox city={city} />
           </div>
         </div>
       </div>

@@ -44,10 +44,9 @@ yarn test // to run tests with jest
 - dark vs light mode based on the time of the day
 - loading skeleton
 - empty state for the app
-- framer animation on suggest dropdown
-- debouns on typing a city
 - scroll with fixed image bg to see more info in the bottom
 - unit tests with mocks
   - geo api
   - weather api + formatted values
   - util function to estimate day start and end
+- toasts for errors

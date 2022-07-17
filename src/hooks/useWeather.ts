@@ -5,7 +5,7 @@ import { fetchWeather } from "../api";
 const useWeather = (city: Option | undefined) => {
   const { name, lat, lon } = city || {};
 
-  const { data } = useQuery(
+  const { data, ...otherQueryInfo } = useQuery(
     ["weather", { name }],
     () =>
       fetchWeather({
@@ -21,7 +21,7 @@ const useWeather = (city: Option | undefined) => {
     }
   );
 
-  return data?.data || {};
+  return [data?.data || {}, otherQueryInfo];
 };
 
 export default useWeather;

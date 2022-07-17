@@ -5,8 +5,6 @@ import { useDefaultCity } from "../hooks";
 
 function App() {
   const [city, updateCity] = useDefaultCity();
-
-  // TODO: useWeatherData hook to fetch weather information when city changes
   // TODO: useBackgroundImage hook to fetch background image when city changes
 
   const handleSelect = (city: Option) => {
@@ -38,8 +36,6 @@ function App() {
             style={{ backgroundImage: "url(/weather-placeholder.jpg)" }}
           >
             <GeoSearch onSelect={handleSelect} defaultCity={city} />
-            {/* TODO: pass response from weatheropen api to format it inside */}
-            {/* @ts-ignore */}
             <WeatherBox city={city} />
           </div>
         </div>

@@ -13,17 +13,16 @@ interface Props {
 
 const WeatherBox = ({ city }: Props) => {
   // @ts-ignore
-  const { weather = [], wind = {}, main = {}, sys = {} } = useWeather(city);
+  const [{ weather = [], wind = {}, main = {}, sys = {} }] = useWeather(city);
   console.log(sys);
   return (
     <div className={styles.clipped}>
       <LocationBox city={city} />
-      <div className="grid grid-cols-2 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 space-y-6 md:space-y-0 mt-6">
         <div className="text-9xl text-center">{`${Math.floor(
           main.temp
         )}°C`}</div>
         <div className="text-xl">
-          {/* TODO: pass weather array as props */}
           <Weather weather={weather[0]} />
           <WeatherInfo Icon={WindIcon} text={`${wind.speed} m/s`} />
           <WeatherInfo

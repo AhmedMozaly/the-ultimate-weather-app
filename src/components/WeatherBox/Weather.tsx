@@ -5,9 +5,10 @@ type WeatherType = {
 
 interface Props {
   weather: WeatherType | undefined;
+  isLoading?: boolean;
 }
 
-const Weather = ({ weather }: Props) => {
+const Weather = ({ weather, isLoading = false }: Props) => {
   const { icon, description } = weather || {};
 
   return (

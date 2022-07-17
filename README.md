@@ -48,5 +48,4 @@ yarn test // to run tests with jest
 - unit tests with mocks
   - geo api
   - weather api + formatted values
-  - util function to estimate day start and end
 - toasts for errors

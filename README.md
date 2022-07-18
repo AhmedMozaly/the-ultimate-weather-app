@@ -1,5 +1,9 @@
 # The Weather App
 
+> The Ultimate Weather App feat. OpenWeatherMap API.
+
+_Design inspired by [Anastasia Kas](https://dribbble.com/shots/6250202-Daily-UI-037-Weather)_
+
 ## Context
 
 You are a senior member of a team tasked with developing the web front-end of a new, intelligent weather forecasting service. While the data science team are reading the clouds, the Venture is keen to get a proof of concept up and running.
@@ -39,13 +43,14 @@ yarn build // to build the app
 yarn test // to run tests with jest
 ```
 
-## TODOs
+## Future work aka extra TODOs
 
 - dark vs light mode based on the time of the day
+- change image on city search
 - loading skeleton
 - empty state for the app
-- scroll with fixed image bg to see more info in the bottom
 - unit tests with mocks
   - geo api
   - weather api + formatted values
 - toasts for errors
+- take out ts-ignores

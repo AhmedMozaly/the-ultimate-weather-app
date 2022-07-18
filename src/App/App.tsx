@@ -5,7 +5,6 @@ import { useDefaultCity } from "../hooks";
 
 function App() {
   const [city, updateCity] = useDefaultCity();
-  // TODO: useBackgroundImage hook to fetch background image when city changes
 
   const handleSelect = (city: Option) => {
     updateCity(city);
@@ -32,7 +31,6 @@ function App() {
         <div className="max-w-[800px] mx-auto md:p-4">
           <div
             className="min-h-[800px] w-full bg-cover bg-no-repeat bg-center md:rounded-xl md:shadow-xl flex flex-col justify-between overflow-hidden"
-            // TODO: change the image on search
             style={{ backgroundImage: "url(/weather-placeholder.jpg)" }}
           >
             <GeoSearch onSelect={handleSelect} defaultCity={city} />

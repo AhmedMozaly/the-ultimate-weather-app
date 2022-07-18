@@ -1,5 +1,6 @@
 .clipped {
-  @apply bg-clay-900 relative z-10 h-1/4 text-white pt-20 px-8 pb-4;
+  @apply bg-clay-900 relative z-10 text-white pt-20 px-8 pb-8;
   margin-bottom: -1px;
   clip-path: ellipse(99% 77% at 25% 78%);
+  min-height: 600px;
 }

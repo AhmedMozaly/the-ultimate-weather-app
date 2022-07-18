@@ -1,4 +1,4 @@
-import { LocationIcon, Option } from "../";
+import { LocationIcon, Option, Skeleton } from "../";
 import { getName } from "country-list";
 
 interface Props {
@@ -11,11 +11,17 @@ const LocationBox = ({ city, isLoading = false }: Props) => {
 
   return (
     <div>
-      {/* TODO: empty state for when there is no city */}
-      <div className="text-4xl">{name}</div>
+      {isLoading ? (
+        <Skeleton height={40} width={150} />
+      ) : (
+        <div className="text-4xl">{name}</div>
+      )}
       <div className="flex items-center text-xl text-clay-200 mt-1">
         <LocationIcon />
-        <span className="ml-2 ">{isLoading ? <></> : getName(country)}</span>
+
+        <span className="ml-2 ">
+          {isLoading ? <Skeleton width={150} /> : getName(country)}
+        </span>
       </div>
     </div>
   );

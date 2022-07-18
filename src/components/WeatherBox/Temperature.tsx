@@ -1,10 +1,12 @@
 import { useTemperature } from "../../hooks";
+import { Skeleton } from "../";
 
 interface Props {
   children: number;
+  isLoading?: boolean;
 }
 
-const Temperature = ({ children }: Props) => {
+const Temperature = ({ children, isLoading = false }: Props) => {
   const [temp, changeUnit] = useTemperature(children);
 
   return (
@@ -12,7 +14,7 @@ const Temperature = ({ children }: Props) => {
       onClick={changeUnit}
       className="text-9xl rounded-xl py-8 my-2 text-center ease-in duration-100 active:bg-clay-800"
     >
-      {temp}
+      {isLoading ? <Skeleton /> : temp}
     </button>
   );
 };

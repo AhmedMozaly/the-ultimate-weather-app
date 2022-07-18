@@ -1,3 +1,5 @@
+import { Skeleton } from "../";
+
 type WeatherType = {
   icon: string;
   description: string;
@@ -13,12 +15,21 @@ const Weather = ({ weather, isLoading = false }: Props) => {
 
   return (
     <div className="flex items-center capitalize">
-      <img
-        src={`http://openweathermap.org/img/wn/${icon}.png`}
-        className="w-16"
-        alt="weather icon"
-      />
-      {description}
+      {isLoading ? (
+        <div className="flex mb-5">
+          <Skeleton width={32} height={32} className="ml-4" />
+          <Skeleton width={100} height={32} className="ml-4" />
+        </div>
+      ) : (
+        <>
+          <img
+            src={`http://openweathermap.org/img/wn/${icon}.png`}
+            className="w-16"
+            alt="weather icon"
+          />
+          {description}
+        </>
+      )}
     </div>
   );
 };

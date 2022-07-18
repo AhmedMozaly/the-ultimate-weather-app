@@ -15,14 +15,14 @@ interface Props {
 const WeatherBox = ({ city }: Props) => {
   const [{ weather = [], wind = {}, main = {}, sys = {} }, { isLoading }] =
     useWeather(city);
-  console.log(city);
+
   return (
     <div className={styles.clipped}>
       {city || isLoading ? (
         <>
           <LocationBox city={city} isLoading={isLoading} />
           <div className="grid grid-cols-1 md:grid-cols-2 space-y-6 md:space-y-0 mt-6">
-            <Temperature>{main.temp}</Temperature>
+            <Temperature isLoading={isLoading}>{main.temp}</Temperature>
             <div className="text-xl">
               <Weather weather={weather[0]} isLoading={isLoading} />
               <WeatherInfo
@@ -38,7 +38,7 @@ const WeatherBox = ({ city }: Props) => {
               />
             </div>
           </div>
-          <DayMap data={sys} />
+          <DayMap data={sys} isLoading={isLoading} />
         </>
       ) : (
         <div className="text-xl my-auto mx-auto text-center mt-52 text-clay-300">

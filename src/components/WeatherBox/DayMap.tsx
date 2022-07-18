@@ -1,11 +1,12 @@
-import { SunIcon, SunsetIcon } from "../";
+import { SunIcon, SunsetIcon, Skeleton } from "../";
 import { timestampToTime } from "../../utils";
 
 interface Props {
   data: { sunrise: number; sunset: number };
+  isLoading?: boolean;
 }
 
-const DayMap = ({ data }: Props) => {
+const DayMap = ({ data, isLoading = false }: Props) => {
   const { sunrise, sunset } = data;
 
   return (
@@ -17,8 +18,8 @@ const DayMap = ({ data }: Props) => {
             height={62}
             className="mx-auto mb-4 text-yellow-500"
           />
-          <h4 className="text-sm text-clay-200">Sunrise</h4>
-          {timestampToTime(sunrise)}
+          <h4 className="text-sm text-clay-200 mb-1">Sunrise</h4>
+          {isLoading ? <Skeleton width={50} /> : timestampToTime(sunrise)}
         </div>
         <div>
           <SunsetIcon
@@ -26,8 +27,8 @@ const DayMap = ({ data }: Props) => {
             height={62}
             className="mx-auto mb-4 text-yellow-600"
           />
-          <h4 className="text-sm text-clay-200">Sunset</h4>
-          {timestampToTime(sunset)}
+          <h4 className="text-sm text-clay-200 mb-1">Sunset</h4>
+          {isLoading ? <Skeleton width={50} /> : timestampToTime(sunset)}
         </div>
       </div>
     </div>

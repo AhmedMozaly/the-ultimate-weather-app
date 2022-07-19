@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>The Weather App</title>
+        <title>The Ultimate Weather App</title>
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

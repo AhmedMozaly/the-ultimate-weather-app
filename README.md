@@ -47,10 +47,7 @@ yarn test // to run tests with jest
 
 - dark vs light mode based on the time of the day
 - change image on city search
-- loading skeleton
-- empty state for the app
 - unit tests with mocks
   - geo api
   - weather api + formatted values
 - toasts for errors
-- take out ts-ignores

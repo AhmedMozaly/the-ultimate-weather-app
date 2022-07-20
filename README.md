@@ -51,3 +51,6 @@ yarn test // to run tests with jest
   - geo api
   - weather api + formatted values
 - toasts for errors
+- accessibility
+  - keyboard navigation
+  - labelledBy

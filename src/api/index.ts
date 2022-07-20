@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig } from "axios";
 
-export const baseURL = `http://api.openweathermap.org`;
+export const baseURL = `https://api.openweathermap.org`;
 export const geoDataUrl = "/geo/1.0/direct";
 export const reverseGeoDataUrl = "/geo/1.0/reverse";
 export const weatherDataUrl = "/data/2.5/weather";
